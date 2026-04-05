@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 217 85% 22%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 217 85% 18%;
+
+    --muted: 220 12% 95%;
+    --muted-foreground: 220 10% 42%;
+
+    --accent: 217 75% 38%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 217 85% 22%;
+
+    --radius: 0.375rem;
+
+    --brand-deep: 217 90% 15%;
+    --brand-medium: 217 85% 22%;
+    --brand-bright: 217 75% 38%;
+    --brand-light: 217 40% 78%;
+    --brand-surface: 220 15% 96%;
+
+    --gold: 40 65% 50%;
+    --gold-light: 40 45% 78%;
+    --gold-dark: 40 55% 28%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    overflow: visible;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--brand-deep)), hsl(var(--brand-bright)));
+  }
+
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--brand-deep)), hsl(var(--brand-medium)));
+  }
+
+  .bg-gradient-brand-light {
+    background: linear-gradient(180deg, hsl(var(--brand-surface)), hsl(var(--background)));
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(160deg, hsl(var(--brand-deep)) 0%, hsl(var(--brand-medium)) 50%, hsl(var(--brand-bright)) 100%);
+  }
+
+  .texture-linen {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M0 0h1v1H0zM4 4h1v1H4zM8 0h1v1H8zM12 4h1v1h-1zM16 0h1v1h-1zM20 4h1v1h-1zM24 0h1v1h-1zM28 4h1v1h-1zM32 0h1v1h-1zM36 4h1v1h-1zM0 8h1v1H0zM4 12h1v1H4zM8 8h1v1H8zM12 12h1v1h-1zM16 8h1v1h-1zM20 12h1v1h-1zM24 8h1v1h-1zM28 12h1v1h-1zM32 8h1v1h-1zM36 12h1v1h-1zM0 16h1v1H0zM4 20h1v1H4zM8 16h1v1H8zM12 20h1v1h-1zM16 16h1v1h-1zM20 20h1v1h-1zM24 16h1v1h-1zM28 20h1v1h-1zM32 16h1v1h-1zM36 20h1v1h-1zM0 24h1v1H0zM4 28h1v1H4zM8 24h1v1H8zM12 28h1v1h-1zM16 24h1v1h-1zM20 28h1v1h-1zM24 24h1v1h-1zM28 28h1v1h-1zM32 24h1v1h-1zM36 28h1v1h-1zM0 32h1v1H0zM4 36h1v1H4zM8 32h1v1H8zM12 36h1v1h-1zM16 32h1v1h-1zM20 36h1v1h-1zM24 32h1v1h-1zM28 36h1v1h-1zM32 32h1v1h-1zM36 36h1v1h-1z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .texture-diagonal {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.015'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .texture-paper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  }
+
+  .texture-herringbone {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0L24 12L12 24L0 12z' fill='none' stroke='%23000000' stroke-opacity='0.015' stroke-width='0.5'/%3E%3C/svg%3E");
+  }
+
+  .texture-damask {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='0.02' stroke-width='0.5'%3E%3Cpath d='M30 0c8 8 8 22 0 30S22 52 30 60M0 30c8-8 22-8 30 0s22 8 30 0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .ornament-line {
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.3), hsl(var(--gold)), hsl(var(--gold) / 0.3), transparent);
+    height: 1px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
